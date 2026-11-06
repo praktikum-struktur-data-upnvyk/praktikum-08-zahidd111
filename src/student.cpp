@@ -82,8 +82,11 @@ void clear(Node*& root) {
 // =============================================================================
 
 bool insert(Node*& root, int nilai) {
-if (root == nullptr) {
-        root = new Node(nilai);
+    if (root == nullptr) {
+        root = new Node();
+        root->data = nilai;
+        root->left = nullptr;
+        root->right = nullptr;
         return true;
     }
     if (nilai < root->data) {
